@@ -1,0 +1,32 @@
+<h3>Informe o usuário do github</h3>
+
+<form class="form-inline">
+    <div class="form-group mx-sm-3 mb-2">
+        <input type="password" name="inputSearch" [(ngModel)]="user" class="form-control" id="inputSearch" placeholder="Usuário">
+    </div>
+    <div class="form-group mx-sm-2 mb-2">
+        <button type="submit" (click)="getGitHubUser()" class="btn btn-primary">Pesquisar</button>
+    </div>
+    <div class="form-group mx-sm-3 mb-2">
+        <button type="button" (click)="clearGithubUser()" class="btn btn-primary">Limpar</button>
+    </div>
+</form>
+
+<table *ngIf="githubUser != undefined" class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Login</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Empresa</th>
+            <th scope="col">#</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ githubUser.login }}</td>
+            <td>{{ githubUser.name }}</td>
+            <td>{{ githubUser.company }}</td>
+            <td><button class="btn btn-primary" (click)="detailGitUser()">Detalhe</button></td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,39 @@
+<ngb-tabset class="marginTabSet">
+    <ngb-tab title="Repositorys by User">
+        <ng-template ngbTabContent>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Url</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let repositorys of repositorysByUser">
+                        <td>{{ repositorys.name }}</td>
+                        <td>{{ repositorys.url }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Repositorys Starred by User">
+        <ng-template ngbTabContent>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Url</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let repositorysStarred of repositorysStarredByUser">
+                        <td>{{ repositorysStarred.name }}</td>
+                        <td>{{ repositorysStarred.url }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+    </ngb-tab>
+</ngb-tabset>
+<button class="btn btn-primary" (click)="backToHome()">Voltar</button>
