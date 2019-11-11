@@ -1,24 +1,14 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
+            schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
             declarations: [
-                AppComponent
-            ],
-            imports: [
-                BrowserModule,
-                NgbModule.forRoot(),
-                AppRoutingModule,
-                FormsModule,
-                HttpClientModule
-            ],
+                AppComponent,
+            ]
         }).compileComponents();
     }));
 

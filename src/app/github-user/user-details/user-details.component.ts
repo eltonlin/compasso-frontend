@@ -22,14 +22,20 @@ export class UserDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.route);
     this.user = this.route.snapshot.params['user'];
+    this.getGitHubRepositorysByUser();
+    this.getGitHubStarredByUser();
+    
+  }
 
+  getGitHubRepositorysByUser(){
     this.githubService.getGitHubReposByUser(this.user)
       .subscribe(repositorys => this.repositorysByUser = repositorys);
+  }
 
+  getGitHubStarredByUser(){
     this.githubService.getGitHubStarredByUser(this.user)
-      .subscribe(repositorysStarred => this.repositorysStarredByUser = repositorysStarred );
+    .subscribe(repositorysStarred => this.repositorysStarredByUser = repositorysStarred );
   }
 
   backToHome(){
